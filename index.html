@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="blog.png">
+        <link rel="icon" type="image/x-icon" href="blog.png">
     <title>Blogs-Home</title>
     <style>
         /*main and all*/        
@@ -12,6 +12,10 @@
             margin: 0;
         }
         /*header*/
+        header
+        {
+            max-width: 2000px;
+        }
         /*Top*/
         .top-tamp
         {
@@ -91,6 +95,9 @@
             float: inline-start;
             min-width: 0px;
             background-color: bisque;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .nav-right
         {
@@ -306,6 +313,37 @@
             font-weight: 400;
             font-style: normal;
         }
+        @media only screen and (max-width: 750px)
+        {
+            .top-left
+            {
+                width: 100%;
+                height: fit-content;
+            }
+            .top-right
+            {
+                width: 100%;
+                height: fit-content;
+            }
+            .top-left-right
+            {
+                width: 0%;
+                height: 0%;
+            }
+            .nav-left
+            {
+                width: 100%;
+                max-width: 2000px;
+            }
+            .nav-right
+            {
+                width: 100%;
+            }
+            .footer-a,.footer-b,.footer-c
+            {
+                width: 100%;
+            }
+        }
         </style>
         <!--Links for Fonts by google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -347,10 +385,14 @@
         </div>
         <nav class="nav-main">
             <div class="nav-left">
+                <form action="#">
+                    <input type="search" id="search" name="search" placeholder="search">
+                    <button id="search">Search</button>
+                </form>
             </div>
             <div class="nav-right">
                 <ul class="nav-list">
-                    <li class="nav-1 nav-main-in"><a href="Index.html">Home</a></li>
+                    <li class="nav-1 nav-main-in"><a href="index.html">Home</a></li>
                     <li class="nav-2 nav-main-in"><a href="blog-list.html">Blog-List</a></li>
                     <li class="nav-3 nav-main-in"><a href="blog-detail.html">Blog-Detail</a></li>
                     <li class="nav-4 nav-main-in"><a href="gallery.html">Gallery</a></li>
