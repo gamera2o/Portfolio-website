@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs-Home</title>
+    <style>
+        /*main and all*/        
+        *
+        {
+            margin: 0;
+        }
+        /*header*/
+        header
+        {
+            max-width: 2000px;
+        }
+        /*Top*/
+        .top-tamp
+        {
+            height: 100px;
+            max-width: 2000px;
+            background-color: aqua;
+        }
+        /*top LEFT*/
+        .top-left
+        {
+            width: 50%;
+            height: 100px;
+            float: left;
+            background-color: aqua;
+        }
+        /*Top left left*/
+        .top-left-left
+        {
+            width: 50%;
+            height: 100px;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: inline-start;
+        }
+        /*Top left right*/
+        .top-left-right
+        {
+            width: 50%;
+            height: 100px;
+            min-width: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            float: inline-end;
+        }
+        /*top RIGHT*/
+        .top-right
+        {
+            width: 50%;
+            min-width: 240px;
+            min-height: fit-content;
+            float: right;
+            background-color: aqua;
+        }
+        /*top RIGHT TOP*/
+        .top-right-top
+        {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+        }
+        /*top RIGHT BOTTUM*/
+        .top-right-bottum
+        {
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        /*navigation inside header*/
+        .nav-main
+        {
+            height: 35px;
+            max-width: 2000px;
+            background-color: bisque;
+        }
+        .nav-left
+        {
+            max-width: 40%;
+            height: 35px;
+            float: inline-start;
+            min-width: 0px;
+            background-color: bisque;
+        }
+        .nav-right
+        {
+            width: 60%;
+            max-width: 1800px;
+            min-width: 340px;
+            height: 35px;
+            float: inline-end;
+            background-color: bisque;
+        }
+        .nav-list
+        {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+        }
+        /*Header styles*/
+        .t-r-b>p>a
+        {
+            text-decoration: none;
+            font-weight:900;
+        }
+        .top-left-left>a
+        {
+            text-decoration: none;
+        }
+        .com
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .nav-list
+        {
+            /*styling*/
+            list-style: none;
+        }
+        .nav-list>li>a
+        {
+            color: rgb(23, 79, 128);
+            text-decoration: none;
+        }
+        /*image in logo in header*/
+        .top-left-left>a>img
+        {
+            width: 128px;
+            height: 62px;
+            padding-left: 10px;
+        }
+        /*section*/
+        main
+        {
+            height: 900px;
+            max-width: 2000px;
+            background-color: chocolate;
+        }
+        .contaner-a
+        {
+            height: 100px;
+            display: grid;
+            grid-column-gap: 60px;
+        }
+        /*footer*/
+        footer
+        {
+            max-width: 2000px;
+            min-height: 175px;
+            background-color: rgb(0, 255, 153);
+        }
+        .footer-main
+        {
+            margin-right: 0.5%;
+            margin-left: 0.5%;
+            margin-top: 0%;
+            margin-top: 0%;
+            min-height: 175px;
+        }
+        .footer-tre
+        {
+            margin: 0%;
+            float: inline-start;
+            width: 33%;
+            height: 175px;
+            min-width:min-content;
+            min-height: max-content;
+        }
+        .fa1>a>img
+        {
+            width: 128px;
+            height: 64px;
+        }
+        /*footer section one*/
+        .footer-a
+        {
+            min-width: 250px;
+        }
+        .fa1
+        {
+            width: 50%;
+            height: inherit;
+        }
+        .fa1left
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: inline-start;
+        }
+        .fa1right
+        {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            float: inline-end;
+        }
+        /*footer section two*/
+        .footer-b
+        {
+            min-height: 175px;
+            min-width: 250px;
+        }
+        .fb-h
+        {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fb-p
+        {
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        /*footer section three*/
+        .footer-c
+        {
+            min-width: 220px;
+        }
+        .fc-h
+        {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .fc-c
+        {
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .fc-l
+        {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fc-l>a>img
+        {
+            height: 20px;
+            width: 22px;
+            padding: 3px;
+        }
+        .fc-l-h
+        {
+            padding: 10px;
+        }
+        /*last comment*/
+        .copyright
+        {
+            display: flex;
+            justify-content: space-evenly;
+            align-content: center;
+            height: 20px;
+            width: 100%;
+            background-color:royalblue;
+        }
+        /*Font control*/
+        .nav-list
+        {
+            font-family: "Madimi One", sans-serif;
+            font-weight:bold;
+            font-style: normal;
+            font-size:medium;
+        }
+        .fb-p
+        {
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .fb-h,.fc-h
+        {
+            font-family: "Kanit", sans-serif;
+            font-weight: bold;
+            font-style: normal;
+        }
+        .fc-c>ul>li
+        {
+            font-family: "Kanit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .com,.top-right-bottum
+        {
+            font-family: "Concert One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        </style>
+        <!--Links for Fonts by google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <!--Font link 2-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Rock+3D&display=swap" rel="stylesheet">
+    <!--Font link 3-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Rock+3D&family=Signika:wght@300..700&display=swap" rel="stylesheet">
+    <!--font link 4-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Rock+3D&family=Signika:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-tamp">
+            <div class="top-left top">
+                <div class="top-left-left">
+                    <a href="Index.html"><img src="blog.png" alt="Logo" title="Blogs.com"></a>
+                    <a href="Index.html"><h1 class="com">.COM</h1></a>
+                </div>
+                <div class="top-left-right"></div>
+            </div>
+            <div class="top-right top">
+                <div class="top-right-top tr">
+                    <form action="#" id="log-form">
+                        <input type="text" id="username" name="username" placeholder="Username">
+                        <input type="password" id="password" name="password" placeholder="password">
+                        <button>Sign In</button>
+                    </form>
+                </div>
+                <div class="top-right-bottum tr"><p>Click -><a href="contact.html">Rregister</a> now if not registered.</p></div>
+            </div>
+        </div>
+        <nav class="nav-main">
+            <div class="nav-left">
+            </div>
+            <div class="nav-right">
+                <ul class="nav-list">
+                    <li class="nav-1 nav-main-in"><a href="Index.html">Home</a></li>
+                    <li class="nav-2 nav-main-in"><a href="blog-list.html">Blog-List</a></li>
+                    <li class="nav-3 nav-main-in"><a href="blog-detail.html">Blog-Detail</a></li>
+                    <li class="nav-4 nav-main-in"><a href="gallery.html">Gallery</a></li>
+                    <li class="nav-5 nav-main-in"><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="section">
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-a footer-tre">
+                <div class="fa1left fa1"><a href="Index.html"><img src="blog.png" alt="main-logo"></a>
+                </div>
+                <div class="fa1right fa1"><h2>Blog.com</h2>
+                </div>
+            </div>
+            <div class="footer-b footer-tre">
+                <h4 class="fb-h">About us:</h4>
+                <p class="fb-p">Welcome to blog.com! We're a team of writers passionate about technology. Here, we share our knowledge, insights, and experiences to help you</p>
+                <div class="----f"></div>
+            </div>
+            <div class="footer-c footer-tre">
+                <div class="fc-h">
+                    <h4>Contact Us On:</h4>
+                </div>
+                <div class="fc-c">
+                    <ul>
+                        <li>Contact Number: <a href="tel:9800000000">9800000000</a></li>
+                        <li>Email: <a href="mail:info@gmail.com">info@gmail.com</a></li>
+                        <li>Address: Tinkune , Kathmandu</li>
+                    </ul>
+                </div>
+                <div class="fc-l">
+                    <h4 class="fc-l-h">Follow Us On:</h4>
+                    <a href="#"><img src="yt.png" alt="youtube" title="youtube link"></a>
+                    <a href="#"><img src="fb.png" alt="facebook" title="youtube link"></a>
+                    <a href="#"><img src="in.png" alt="instagram" title="youtube link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>All the rights are reserved &copy;,2024</p>
+        </div>
+    </footer>
+</body>
+</html>
