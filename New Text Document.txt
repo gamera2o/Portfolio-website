@@ -90,3 +90,15 @@
                     <a href="#"><img src="yt.png" alt="link" title="youtube link"></a>
                     <a href="#"><img src="fb.png" alt="link" title="youtube link"></a>
                     <a href="#"><img src="in.png" alt="link" title="youtube link"></a>
+---------------------------------------------------------
+                <a href="blog-detail.html">
+                    <div class="image-box">
+                        <img src="#" alt="photo">
+                    </div>
+                    <div class="wc">
+                        <h3 class="headlines"></h3>
+                        <div class="a-d"><p class="author">Author:</p><p class="date">Date:</p></div>
+                        <p class="artic"></p>
+                    </div>
+                    <div class="read-more"><a href="blog-detail.html">Read more</a></div>
+                </a>

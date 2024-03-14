@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="blog.png">
     <title>Blogs-Detail</title>
     <style>
         /*main and all*/        
@@ -145,19 +144,6 @@
             width: 128px;
             height: 62px;
             padding-left: 10px;
-        }
-        /*section*/
-        main
-        {
-            height: 900px;
-            max-width: 2000px;
-            background-color: chocolate;
-        }
-        .contaner-a
-        {
-            height: 100px;
-            display: grid;
-            grid-column-gap: 60px;
         }
         /*footer*/
         footer
@@ -310,6 +296,40 @@
             font-weight: 400;
             font-style: normal;
         }
+        .post-main>p
+        {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: large;
+        }
+        .post-main>h2
+        {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+        }
+        .head-title>h1
+        {
+            font-family: "Merriweather", serif;
+            font-weight: bolder;
+            font-style: normal;
+        }
+        .nav-3>a
+        {
+            background-color: rgba(152, 252, 255, 0.696);
+            border: 1px solid rgba(0, 0, 0, 0.399);
+            border-radius: 7px;
+        }
+        .nav-main-in :hover
+        {
+            color: rgb(61, 0, 126);
+            background-color: rgba(0, 0, 0, 0.184);
+            border-radius: 7px;
+            border: 1px solid black;
+        }
         @media only screen and (max-width: 750px)
         {
             .top-left
@@ -340,6 +360,100 @@
             {
                 width: 100%;
             }
+            main
+            {
+                margin-top: 20%;
+            }
+        }
+        @media only screen and (max-width: 590px)
+        {
+            .main-section
+            {
+                margin-top: 20%;
+            }
+        }
+        @media only screen and (max-width: 370px)
+        {
+            .main-section
+            {
+                margin-top: 30%;
+            }
+        }
+        #username,#password,.search-s
+        {
+            border-radius: 50px;
+            border: 1px solid rgb(255, 143, 44);
+            height: 30px;
+            width: 200px;
+        }
+        #bt
+        {
+            color: black;
+        }
+        .search-h,.sign
+        {
+            color: black;
+            border: 1px solid rgb(255, 143, 44);
+            border-radius: 50px;
+        }
+        /*section*/
+        .section
+        {
+            max-width: 2000px;
+            height: max-content;
+            background-color: rgb(182, 218, 228);
+            padding-top: 5%;
+            padding-bottom: 5%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+        /*main containts*/
+        .main-section
+        {
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.078);
+            background-color: rgba(240, 248, 255, 0.323);
+            border-radius: 15px;
+        }
+        .head-title
+        {
+            height: max-content;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            margin: 5%;
+        }
+        .main-image
+        {
+            width: 100%;
+            height: max-content;
+        }
+        .main-image>img
+        {
+            width: 90%;
+            height: max-content;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+            border-radius: 15px;
+        }
+        .post-main
+        {
+            width: 90%;
+            padding-right: 5%;
+            padding-left: 5%;
+            height: max-content;
+        }
+        .post-main>h2
+        {
+            padding: 10px;
+        }
+        .post-main>p
+        {
+            padding: 9px;
         }
         </style>
         <!--Links for Fonts by google-->
@@ -358,13 +472,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&family=Rock+3D&family=Signika:wght@300..700&display=swap" rel="stylesheet">
+    <!--font link 5-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Concert+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Madimi+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rock+3D&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sawarabi+Gothic&family=Signika:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!--font link 6-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Concert+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Madimi+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rock+3D&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sawarabi+Gothic&family=Signika:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="top-tamp">
             <div class="top-left top">
                 <div class="top-left-left">
-                    <a href="index.html"><img src="blog.png" alt="Logo" title="Blogs.com"></a>
+                    <a href="index.html"><img src="images/blog.png" alt="Logo" title="Blogs.com"></a>
                     <a href="index.html"><h1 class="com">.COM</h1></a>
                 </div>
                 <div class="top-left-right"></div>
@@ -374,17 +496,17 @@
                     <form action="#" id="log-form">
                         <input type="text" id="username" name="username" placeholder="Username">
                         <input type="password" id="password" name="password" placeholder="password">
-                        <button>Sign In</button>
+                        <button class="sign">Sign In</button>
                     </form>
                 </div>
-                <div class="top-right-bottum tr"><p>Click -><a href="contact.html">Rregister</a> now if not registered.</p></div>
+                <div class="top-right-bottum tr"><p>Click -><a href="contact.html">Register</a> now if not registered.</p></div>
             </div>
         </div>
         <nav class="nav-main">
             <div class="nav-left">
                 <form action="#">
-                    <input type="search" id="search" name="search" placeholder="search">
-                    <button id="search">Search</button>
+                    <input type="search" id="search" class="search-s" name="search" placeholder="search">
+                    <button id="search" class="search-h">Search</button>
                 </form>
             </div>
             <div class="nav-right">
@@ -399,11 +521,49 @@
         </nav>
     </header>
     <main class="section">
+        <div class="main-section">
+            <div class="head-title"><h1>Harnessing the power of Apple Vision Pro for remote work</h1></div>
+            <div class="main-image"><img src="images/Apple-Vision-Pro-remote-work-1-1536x1024.jpg.webp" alt="photo"></div>
+            <div class="post-main">
+                <p>In the era of remote work, technology is at the forefront of bridging the gap between teams spread across different geographical locations. One such groundbreaking innovation that promises to redefine our remote work experience is Apple’s Vision Pro headset. This revolutionary mixed-reality headset, unveiled at Apple’s annual WWDC keynote, is packed with features to facilitate collaboration and enhance productivity in remote work.</p>
+                <br>
+                <p>Here’s how:</p>
+                <h2>The future of video calls</h2>
+                <p>One of the standout features of the Vision Pro is its support for immersive video calls through FaceTime. The Vision Pro has cleverly addressed the challenge of video conferencing when the headset covers the user’s face. </p>
+                <br>
+                <p>Using the device’s front-facing cameras, users can take an initial scan of their face, which the headset then uses to create a 3D, digital version for use in calls. When the user talks on FaceTime, sensors facing the wearer are designed to detect and represent facial movements through the digital persona.</p>
+                <br>
+                <p>This makes video conferencing more engaging and interactive, a boon for remote teams that primarily communicate through such platforms.</p>
+                <h2>Natural interaction with digital content</h2>
+                <p>The Vision Pro relies on a person’s body movements for input as opposed to external controllers, making it intuitive and user-friendly. It tracks a user’s hands, eyes, and voice using 12 cameras, 5 sensors, and 6 microphones. In an app, users can choose items by simply glancing at them and then pinching their fingers in the air.</p>
+                <br>
+                <p>For design teams, architects, and other professionals that work with 3D models or complicated visual data, this hands-free control offers up new options for interacting with digital content.</p>
+                <h2>Remaining connected with the real world</h2>
+                <p>One of the common challenges with virtual or mixed-reality devices is that they often isolate the user from their surroundings. However, Apple’s Vision Pro aims to mitigate this with its “EyeSight” technology. </p>
+                <br>
+                <p>When the wearer begins to look away from an app and towards their surroundings, the Vision Pro’s glass screen becomes transparent, allowing them to interact with the natural world without removing the headset. This feature ensures that remote workers can stay immersed in their work while still being aware of and able to interact with their environment.</p>
+                <h2>Reimagining productivity with virtual workspaces</h2>
+                <p>The mixed-reality interface on the Vision Pro can be used to design virtual workspaces that are suited to the user’s requirements. It offers a highly adaptable and immersive working environment with the ability to launch and arrange virtual windows, access digital files, and interact with 3D models. </p>
+                <br>
+                <p>This can be especially useful when working with complex data or multi-tasking jobs because it enables the user to set up their workplace to maximize productivity and efficiency.</p>
+                <h2>Creating new avenues for collaboration</h2>
+                <p>The interactive capabilities of the Vision Pro can open up new avenues for remote collaboration. Teams can work together on the same digital canvas in real-time, making brainstorming, design, and problem-solving sessions more effective. This feature can be especially beneficial for creative teams such as designers and architects, as it allows them to collaborate on designs in a shared virtual space.</p>
+                <h2>Addressing the challenges of remote work</h2>
+                <p>As exciting as the Vision Pro is, it’s essential to understand the context in which it operates.</p>
+                <br>
+                <p>Remote work has its challenges. Among the top challenges distributed teams face are the feeling of ‘us’ versus ‘them,’ knowledge transfer issues, cultural differences, communication gaps, and the black box phenomenon where remote team members are far away, and their work is not visible. </p>
+                <br>
+                <p>By enhancing communication and interaction, Vision Pro could address some of these problems.</p>
+                <h2>Looking ahead</h2>
+                <p>The Apple Vision Pro is ready to revolutionize remote work thanks to its cutting-edge features. It blends the strength of mixed reality technology with the requirements of the contemporary remote worker, resulting in a tool that improves communication, makes it easier to interact with digital content, and makes it possible to seamlessly connect the real and virtual worlds. </p>
+                <br>
+                <p>Although this technology is still in its infancy and may be out of some people’s financial range, there is no disputing the potential influence it may have on the future of remote work.</p>
+            </div>
     </main>
     <footer>
         <div class="footer-main">
             <div class="footer-a footer-tre">
-                <div class="fa1left fa1"><a href="index.html"><img src="blog.png" alt="main-logo"></a>
+                <div class="fa1left fa1"><a href="index.html"><img src="images/blog.png" alt="main-logo"></a>
                 </div>
                 <div class="fa1right fa1"><h2>Blog.com</h2>
                 </div>
@@ -426,9 +586,9 @@
                 </div>
                 <div class="fc-l">
                     <h4 class="fc-l-h">Follow Us On:</h4>
-                    <a href="#"><img src="yt.png" alt="youtube" title="youtube link"></a>
-                    <a href="#"><img src="fb.png" alt="facebook" title="youtube link"></a>
-                    <a href="#"><img src="in.png" alt="instagram" title="youtube link"></a>
+                    <a href="#"><img src="images/yt.png" alt="youtube" title="youtube link"></a>
+                    <a href="#"><img src="images/fb.png" alt="facebook" title="youtube link"></a>
+                    <a href="#"><img src="images/in.png" alt="instagram" title="youtube link"></a>
                 </div>
             </div>
         </div>
