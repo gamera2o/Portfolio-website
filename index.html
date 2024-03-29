@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *
+        {
+            margin: 0;
+        }
+        .nav-list
+        {
+            width: 100%;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            list-style: none;
+            background-color: rgb(54, 124, 255);
+            position: sticky;
+            position: -webkit-sticky;
+            bottom: 0;
+        }
+        .nav-box
+        {
+            width: 20%;
+            padding: 10px;
+        }
+        .nav-box>a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .nav-list>li>a
+        {
+            height: min-content;
+            width: min-content;
+        }
+        .nav-fig
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-box:hover
+        {
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: rgb(39, 112, 248)
+        }
+        .main-contaner
+        {
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: rgb(11, 34, 52);
+        }
+        /* post  */
+        .post
+        {
+            width: inherit;
+            border: 1px solid black;
+            border-radius: 12px;
+            background-color: black;
+        }
+        .post-top
+        {
+            max-width: 100%;
+            min-height: 50px;
+            border: solid 1px black;
+            border-radius: 12px;
+            margin: 5px;
+            background-color: rgb(46, 45, 45) ;
+            color: white;
+        }
+        .post-bottum
+        {
+            max-width: 100%;
+            min-height: 50px;
+            border-radius: 12px;
+            margin: 5px;
+            
+        }
+        .post-c
+        {
+            height: max-content;
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid black;
+            margin: 5px;
+            background-color: white;
+        }
+        .post-c>img
+        {
+            height: 100%;
+            width: 100%;
+        }
+        .prof>img>a
+        {
+            height: 25px;
+            width: 25px;
+            border-radius: 50px;
+        }
+        .prof
+        {
+            height: 50%;
+            width: inherit;
+            margin: 6px;
+            display: flex;
+            align-items: center;
+        }
+        .prof>a
+        {
+            text-decoration: none;
+            color:white;
+            font-size: large;
+            font-weight: bold;
+        }
+        .post-name
+        {
+            margin: 6px;
+        }
+        .discription
+        {
+            height: 50%;
+            width: inherit;
+            margin: 6px;
+        }
+        /* bottum post */
+        .post-bottum
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .p-b
+        {
+            width: 33%;
+            border: solid 1px black;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(46, 45, 45) ;
+        }
+        .p-b>a
+        {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: medium;
+        }
+        .p-b>a>img
+        {
+            height: 25px;
+            width: 25px;
+        }
+        @media only screen and (max-width:800px) 
+        {
+            .main-contaner
+            {
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+        }
+        @media only screen and (max-width:500px) 
+        {
+            .main-contaner
+            {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <nav class="nav-list">
+        <div class="nav-box">
+            <a href="index.html">
+                <figure class="nav-home nav-fig">
+                    <img src="icon/SVG/home.svg" alt="Home" title="Home">
+                    <p class="nav-name">Home</p>
+                </figure>
+            </a>
+        </div>
+        <div class="nav-box">
+            <a href="friends.html">
+                <figure class="nav-friends nav-fig">
+                    <img src="icon/SVG/users.svg" alt="Friends" title="Friends">
+                    <p class="nav-name">Friends</p>
+                </figure>
+            </a>
+        </div>
+        <div class="nav-box">
+            <a href="inbox.html">
+                <figure class="nav-inbox nav-fig">
+                    <img src="icon/SVG/bubbles.svg" alt="Inbox" title="Inbox">
+                    <p class="nav-name">Inbox</p>
+                </figure>
+            </a>
+        </div>
+        <div  class="nav-box">
+            <a href="notification.html">
+                <figure class="nav-notification nav-fig">
+                    <img src="icon/SVG/bell.svg" alt="Notification" title="Notification">
+                    <p class="nav-name">Notification</p>
+                </figure>
+            </a>
+        </div>
+        <div  class="nav-box">
+            <a href="profile.html">
+                <figure class="nav-profile nav-fig">
+                    <img src="icon/SVG/user.svg" alt="Profile" title="Profile">
+                    <p class="nav-name">Profile</p>
+                </figure>
+            </a>
+        </div>
+    </nav>
+    <main class="main-contaner">
+        <div class="post-1 post">
+            <div class="post-top r-b">
+                <div class="prof">
+                    <a href="#"><img src="icon/SVG/angry2.svg" alt="profile"></a>
+                    <a href="#"><p class="post-name">Abhishek Thapa</p></a>
+                </div>
+                <div class="discription">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laudantium natus iusto, nobis recusandae expedita quas quia magnam ullam impedit amet aut adipisci accusantium esse tempore sapiente, vero facilis quo.</p>
+                </div>
+            </div>
+            <figure class="post-c">
+                <img src="icon/SVG/500px.svg" alt="photo" title="photo">
+            </figure>
+            <div class="post-bottum r-b">
+                <div class="reaction p-b">
+                    <a href="#"><img src="icon/SVG/checkmark2.svg" alt="Right" title="Right"></a>
+                    <a href="#"><p>100k</p></a>
+                </div>
+                <div class="comment p-b">
+                    <a href="#"><img src="icon/SVG/bubble2.svg" alt="Comment"></a>
+                    <a href="#"><p>10k</p></a>
+                </div>
+                <div class="share p-b">
+                    <a href="#"><img src="icon/SVG/share.svg" alt="Share"></a>
+                    <a href="#"><p>5k</p></a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
