@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        main
+        {
+            width: 100%;
+            height: max-content;
+            background-color: black;
+            color: white;
+        }
+        /* top box */
+        .box
+        {
+            height: 750px;
+            width: 100%;
+            display: flex;
+        }
+        .t11
+        {
+            min-height: 100%;
+            /* width: 50%; */
+            /* border: 1px solid black; */
+        }
+        .tt1,.left
+        {
+            width: 60%;
+        }
+        .tt2,.right
+        {
+            width: 40%;
+        }
+        .t
+        {
+            width: 100%;
+            height: 50%;
+        }
+        .t11>img
+        {
+            width: 80%;
+            height: inherit;
+        }
+        .t1
+        {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .t2
+        {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+        .t21
+        {
+            height: max-content;
+            width: max-content;
+            border: 2px solid white;
+            border-radius: 15px;
+            /* margin: 35px; */
+            margin-right: 70px;
+            margin-top: 60px;
+            padding: 10px;            
+        }
+        .h111
+        {
+            font-size: 70px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            color: wheat;
+        }
+        .h112
+        {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: aliceblue;
+        }
+        @media only screen and (max-width: 882px)
+        {
+            .t11
+            {
+                /* min-width: 442px; */
+                width: 100%;
+            }
+            .top
+            {
+                flex-direction: column;
+                height: fit-content;
+            }
+            .t1
+            {
+                justify-content: space-around;
+                align-items: flex-end;
+            }
+            .t2
+            {
+                justify-content: center;
+            }
+            .t21
+            {
+                margin-right: 0;
+            }
+            .tt2
+            {
+                width: 100%;
+                display: flex;
+                justify-content: center
+            }
+        }
+        /* 2nd */
+        .oim
+        {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .oim>img
+        {
+            width: 80%;
+            height: min-content;
+        }
+        .n1l
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 10px;
+            text-align: center;
+        }
+        /* next2 */
+        .n2t
+        {
+            height: 20%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .n2b
+        {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        .next2
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        /* next3 */
+        .n3
+        {
+            display:flex ;
+            flex-direction: column;
+        }
+        .n3t
+        {
+            height: 20%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            /* background-color: aliceblue */
+        }
+        .n3b
+        {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row;
+            /* background-color: rgb(30, 28, 34) */
+        }
+        .li
+        {
+            height: 300px;
+            width: 300px;
+            display: flex;
+            /* background-color: aqua; */
+            flex-direction: column;
+            align-content: space-around;
+            align-items: center;
+            border: 2px solid whitesmoke;
+            border-radius: 20px;
+        }
+        .pp>img
+        {
+            max-height: 80%;
+            max-width: 80%;
+        }
+        .pp
+        {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .list
+        {
+            width: 100%;
+            height: 20%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        @media only screen and (max-width: 882px)
+        {
+            .next3
+            {
+                height: max-content;
+            }
+            /* .n3t
+            {
+                padding: 50px;
+            } */
+            .n3b
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .li
+            {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+        }
+        /* next4 */
+        .next4
+        {
+            display: flex;
+        }
+        .n4l
+        {
+            height: 100%;
+            width: 60%;
+            display:flex ;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .n4r
+        {
+            height: 100%;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .n4r>img
+        {
+            max-width: 400px;
+            border-radius: 120px;
+        }
+        @media only screen and (max-width: 882px)
+        {
+            .next4
+            {
+                flex-direction: column;
+            }
+            .n4l
+            {
+                width: 100%;
+            }
+            .n4r
+            {
+                width: 100%;
+            }
+        }
+        /* last */
+        .last
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        .bot
+        {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bob
+        {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .boob
+        {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+        }
+        @media only screen and (max-width: 882px)
+        {
+            .bob
+            {
+                flex-direction: column;
+            }
+        }
+        footer
+        {
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        p
+        {
+            font-size: larger;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        li
+        {
+            font-size: ;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="top box">
+            <div class="left ll1 t11 tt1">
+                <div class="t1 t"><h1 class="h111">Welcome to My<br> Portfolio</h1></div>
+                <div class="t2 t"><div class="t21"><h2 class="h112">Abhishek Thapa/ IT Student </h2></div></div>
+            </div>
+            <div class="right t11 tt2">
+                <img src="img/m2.png" alt="image">
+            </div>
+        </div>
+        <div class="next1 box">
+            <div class="left n1l">
+                <h1>Who is
+                    Abhishek ?
+                </h1>
+                <br>
+                <br>
+                <p>I am a student, an enthusiastic and
+                    tech-savvy individual with a passion
+                    for innovation and a keen interest in
+                    
+                    exploring the ever-evolving world of
+                    technology.
+                </p>
+                <br>
+                <br>
+                <span>______________________________</span>
+            </div>
+            <div class="right oim n1r">
+                <img src="img/group.jpg" alt="image">
+            </div>
+        </div>
+        <div class="next2 box">
+            <div class="top1 n2t">
+                <h1>
+                    My Background
+                </h1>
+            </div>
+            <div class="top2 n2b box">
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <p>+2 management With Computer
+                            science from Aishwarya Vidya
+                            Niketan High school  in 2022</p>
+                    </li>
+                    <li>
+                        <p>Bachelor in Information Technology
+                            (hons) from Padmashree College
+                            running from 2023</p>
+                    </li>
+                </ul>
+                <h2>Work Experience</h2>
+                <ul>
+                    <li>
+                        <p>I am a fresher in the IT field. I don't
+                            have any official experience yet</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="next3 n3 box">
+            <div class="n3t">
+                <h1>My Art</h1>
+            </div>
+            <div class="n3b">
+                <div class="p1 li">
+                    <div class="p11 pp">
+                        <img src="img/hk.png" alt="picture">
+                    </div>
+                    <div class="list">
+                        <p>
+                            Krishna janmastami post
+                        </p>
+                    </div>
+                </div>
+                <div class="p2 li">
+                    <div class="p12 pp">
+                        <img src="img/exu.png" alt="picture">
+                    </div>
+                    <div class="list">
+                        <p>
+                            exuma edit
+                        </p>
+                    </div>
+                </div>
+                <div class="p3 li">
+                    <div class="p13 pp">
+                        <img src="img/bg.jpg" alt="picture">
+                    </div>
+                    <div class="list">
+                        <p>
+                            background theme creation for post
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="next4 box">
+            <div class="n4l">
+                <h1>Art speaks where words are unable to explain.</h1>
+            </div>
+            <div class="n4r">
+                <img src="img/cat.jpg" alt="photo">
+            </div>
+        </div>
+        <div class="last box">
+            <div class="bot">
+                <h1>Reach Out To Me</h1>
+            </div>
+            <div class="bob">
+                <div class="bob1 boob"><p><b>Address</b> <br> Tinkune ,Kathmandu</p></div>
+                <div class="bob2 boob"><p><b>Email</b> <br><a href="mailto:Abhishekthapa123456789@gmail.com">Abhishekthapa123456789@gmail.com</a></p></div>
+                <div class="bob3 boob"><p><b>Phone</b> <br><a href="tel:+9779821663633">+9779821663633</a></p></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>&copy; 2024 this site is own by Abhishek thapa</div>
+    </footer>
+</body>
+</html>
