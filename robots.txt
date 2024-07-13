@@ -1,0 +1,42 @@
+# Robots.txt file for abhishek.name.np
+# Created by Abhishek Thapa Portfolio
+
+# Allow all robots full access
+User-agent: *
+Disallow:
+
+# Block specific directories
+Disallow: /admin/
+Disallow: /secret/
+
+# Block specific files
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# Block specific URLs
+Disallow: /login.html
+Disallow: /contact-us.php
+
+# Crawl-delay directive (wait time in seconds between requests)
+# Crawl-delay: 10
+
+# Specify the location of the sitemap
+Sitemap: https://abhishek.name.np/sitemap.xml
+
+# Allow Twitterbot to crawl specific language versions
+User-agent: Twitterbot
+Disallow: /lp
+Disallow: /de-de/lp
+Disallow: /en-au/lp
+Disallow: /en-ca/lp
+Disallow: /en-gb/lp
+Disallow: /en-in/lp
+Disallow: /es-es/lp
+Disallow: /es-la/lp
+Disallow: /fr-fr/lp
+Disallow: /it-it/lp
+Disallow: /ja-jp/lp
+Disallow: /ko-kr/lp
+Disallow: /pt-br/lp
+Disallow: /zh-cn/lp
+Disallow: /zh-tw/lp
