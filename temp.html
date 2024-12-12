@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .temperature {
+      font-size: 2em;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Current Temperature</h1>
+  <p class="temperature" id="temp">Loading...</p>
+
+  <script>
+    // Firebase Realtime Database URL (replace with your actual Firebase URL)
+    const url = "https://temo-f2633-default-rtdb.asia-southeast1.firebasedatabase.app/sensorData.json";
+
+    // Fetch the data from Firebase
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Assuming data.temperature is the value you want
+        const temperature = data.temperature;
+        document.getElementById("temp").textContent = temperature + " °C";
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+        document.getElementById("temp").textContent = "Failed to load data.";
+      });
+  </script>
+</body>
+</html>
