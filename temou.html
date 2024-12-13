@@ -2,44 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature and Humidity</title>
+    <script>
+        function fetchData() {
+            fetch('https://temp.abhishekthapa123456789.workers.dev/')  // Replace with your worker or PHP URL
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("data").innerHTML = data;
+                });
+        }
+
+        setInterval(fetchData, 10000);  // Fetch every 10 seconds
+    </script>
 </head>
 <body>
     <h1>Temperature and Humidity Data</h1>
-    <button id="sendDataBtn">Send Data to Server</button>
-
-    <script>
-        // Function to send data to the server using fetch API
-        document.getElementById('sendDataBtn').addEventListener('click', function() {
-            const temperature = 25; // Example temperature (You can replace this with dynamic data)
-            const humidity = 60;    // Example humidity (You can replace this with dynamic data)
-
-            const serverURL = "https://your-server.com/data_endpoint"; // Replace with your server URL
-
-            // Prepare the data to be sent to the server
-            const data = new URLSearchParams();
-            data.append('temperature', temperature);
-            data.append('humidity', humidity);
-
-            // Send the data using fetch
-            fetch(serverURL, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
-            })
-            .then(response => response.text())
-            .then(result => {
-                console.log('Server Response:', result);
-                alert(result); // Display server response to the user
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Error sending data");
-            });
-        });
-    </script>
+    <div id="data">Waiting for data...</div>
 </body>
 </html>
