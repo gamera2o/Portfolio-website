@@ -5,13 +5,14 @@
     <title>Temperature and Humidity</title>
     <script>
         function fetchData() {
-            fetch('https://temp.abhishekthapa123456789.workers.dev/')  // Replace with your worker or PHP URL
+            fetch('https://tem.abhishekthapa123456789.workers.dev/')  // Replace with your worker URL
                 .then(response => response.json())  // Parse the response as JSON
                 .then(data => {
-                    // Display temperature and humidity
-                    const temperature = data.temperature;
-                    const humidity = data.humidity;
-                    document.getElementById("data").innerHTML = `Temperature: ${temperature}°C <br> Humidity: ${humidity}%`;
+                    if (data.temperature && data.humidity) {
+                        document.getElementById("data").innerHTML = `Temperature: ${data.temperature}°C <br> Humidity: ${data.humidity}%`;
+                    } else {
+                        document.getElementById("data").innerHTML = "Error: No data received";
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
