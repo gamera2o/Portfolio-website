@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Embed Figma Page 1 in your webpage.">
-    <title>Figma Embed - Page 1</title>
+    <meta name="description" content="Full Page Figma Embed">
+    <title>Full Page Figma Embed</title>
+    <style>
+        /* Remove margin and padding, and make sure the body fills the entire viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Make iframe cover the entire page */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Figma Page 1 Embed</h1>
-    
-    <!-- Embed Figma Design -->
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
-            src="https://embed.figma.com/design/duTsZSXfka9jK7QUIDyFIQ/Untitled?node-id=0-1&embed-host=share"
-            allowfullscreen></iframe>
+    <!-- Full-screen Embed of Figma Design -->
+    <iframe src="https://embed.figma.com/design/duTsZSXfka9jK7QUIDyFIQ/Untitled?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 </body>
 </html>
