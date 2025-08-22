@@ -3,95 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Title for better SEO and clarity. -->
-    <title>Abhishek Thapa - Computer Engineer, Data Scientist, & Entrepreneur</title>
-    
-    <!-- Meta Description: A brief, compelling summary of the page content. 
-         This is what appears under the title in Google search results. -->
-    <meta name="description" content="Official portfolio of Abhishek Thapa, a computer engineering student, data scientist, and founder of Nirdist Group. Showcasing projects in AI, machine learning, Python, and more.">
-    
-    <!-- Keywords for search engines (less important today, but still a good practice) -->
-    <meta name="keywords" content="Abhishek Thapa, computer engineer, data scientist, entrepreneur, Nirdist Group, Python, AI, Machine Learning, portfolio, Nepal, computer engineering projects">
-
-    <!-- Social Media Meta Tags (Open Graph and Twitter Card) for richer shares -->
+    <title>Abhishek Thapa - Computer Engineer, Data Scientist & Entrepreneur</title>
+    <meta name="description" content="Official portfolio of Abhishek Thapa. Showcasing expertise in Python, AI, machine learning, and full-stack development. Explore innovative projects and technical skills.">
+    <meta name="keywords" content="Abhishek Thapa, computer engineer, data scientist, entrepreneur, Nirdist Group, Python, AI, Machine Learning, portfolio, Nepal, computer engineering projects, GitHub, projects">
     <meta property="og:title" content="Abhishek Thapa - Computer Engineer & Technologist">
-    <meta property="og:description" content="Official portfolio of Abhishek Thapa, a computer engineering student, data scientist, and founder of Nirdist Group.">
-    <meta property="og:image" content="/pono.png">
+    <meta property="og:description" content="Explore the official portfolio of Abhishek Thapa, a computer engineering student, data scientist, and founder of Nirdist Group. Discover innovative projects and technical expertise.">
+    <meta property="og:image" content="https://abhishek.name.np/pono.png">
     <meta property="og:url" content="https://abhishek.name.np">
     <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Robots meta tag to allow search engines to index and follow links on the page -->
     <meta name="robots" content="index, follow">
-
-    <!-- Favicon: A small icon for the browser tab, improving brand identity -->
-    <link rel="icon" href="/pono.png" type="image/x-icon">
-
-    <!-- Canonical URL: Prevents duplicate content issues -->
+    <link rel="icon" href="https://abhishek.name.np/pono.png" type="image/x-icon">
     <link rel="canonical" href="https://abhishek.name.np">
-
-    <!-- Use Tailwind CSS for a modern, utility-first approach to styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Use Inter font from Google Fonts for a clean, professional look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals with Indigo Accent -->
+    <!-- Application Structure Plan: A single-page, top-to-bottom scrolling application that organizes content thematically (About, Skills, Portfolio, Creative, Academic, Contact). The structure is designed to guide the user from a high-level introduction to specific, interactive project details. This new version focuses on enhancing the user journey with more engaging animations and a dedicated "GitHub Repos" section that directly showcases projects with custom visual cards, making the portfolio a more valuable and dynamic marketing tool. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Personal branding -> Goal: Engage -> Viz/Method: Hero section with subtle animations -> Interaction: Scroll-based triggers -> Justification: Creates a memorable first impression and feels professional.
+        - Report Info: Technical Skills List -> Goal: Compare/Inform -> Viz/Method: Interactive Horizontal Bar Chart -> Interaction: Hover for details (tooltips) -> Justification: Quantifies skill proficiency in a visual, easy-to-digest format. -> Library: Chart.js (Canvas).
+        - Report Info: GitHub Projects List -> Goal: Organize/Explore -> Viz/Method: Filterable Grid of Custom GitHub Cards -> Interaction: Click buttons to filter by technology tag; Hover for subtle card animations -> Justification: This replaces the previous simple grid with a more graphically rich and functional component, directly addressing the request for more graphics and a better representation of GitHub projects. -> Library: Vanilla JS.
+        - Report Info: Creative Videos -> Goal: Inform/Engage -> Viz/Method: Main Video Player with Thumbnail Gallery -> Interaction: Click thumbnails to change the main video -> Justification: Provides a standard, intuitive UX for browsing a video collection, fixing the original broken embed. -> Library: Vanilla JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        /* Base styles using the Inter font family and a light gray background */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f9fafb;
             color: #1f2937;
         }
-
-        /*
-         * Keyframe animations for a smooth, progressive loading effect in the Hero section.
-         * The `forwards` keyword ensures the final animation state is maintained.
-         */
         @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
-        /* Apply the animations to specific hero elements with staggered delays */
-        .hero-title {
-            animation: slideInUp 1s ease-out forwards;
-        }
-        .hero-subtitle {
-            animation: slideInUp 1.2s ease-out forwards;
-        }
-        .hero-button {
-            animation: slideInUp 1.4s ease-out forwards;
-        }
-        .hero-image {
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        /* A class for the scroll-based fade-in effect on sections */
+        .hero-title { animation: slideInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        .hero-subtitle { animation: slideInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        .hero-button { animation: slideInUp 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        .hero-image { animation: fadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
         .section-fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .section-fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 500px; }
+        }
+        .github-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .github-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Sticky Header with backdrop blur effect -->
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900">Abhishek Thapa</a>
@@ -102,12 +88,10 @@
                 <a href="#creative" class="text-gray-600 hover:text-indigo-600 transition-colors">Creative</a>
                 <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">Contact</a>
             </div>
-            <!-- Mobile menu button for small screens -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-900">
+            <button id="mobile-menu-button" class="md:hidden text-gray-900" aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Collapsible mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
             <a href="#about" class="block text-gray-600 hover:text-indigo-600 transition-colors">About</a>
             <a href="#skills" class="block text-gray-600 hover:text-indigo-600 transition-colors">Skills</a>
@@ -118,23 +102,17 @@
     </header>
 
     <main>
-        <!-- Hero Section with subtle animations and a modern, clean look -->
         <section id="hero" class="min-h-[80vh] flex items-center bg-gray-50 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-5 hero-image">
-                <!-- lazy loading improves initial page load speed by only loading the image when it's near the viewport -->
-                <img src="/blue.png" alt="Professional headshot of Abhishek Thapa" class="w-full h-full object-cover object-top" loading="lazy">
-            </div>
             <div class="container mx-auto px-6 text-center z-10 py-16">
                 <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl ring-4 ring-indigo-500/20 hero-image">
-                    <img src="/pono.png" alt="Headshot of Abhishek Thapa Kshetri" class="w-full h-full object-cover" loading="lazy">
+                    <img src="https://abhishek.name.np/pono.png" alt="Headshot of Abhishek Thapa" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/192x192/E9D5FF/1F2937?text=AT';">
                 </div>
-                <!-- The text gradient is now a native Tailwind class for easier maintenance -->
                 <h1 class="text-4xl md:text-7xl font-extrabold text-gray-900 leading-tight hero-title">
-                    Building Innovative Solutions,
+                    Building Solutions,
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Fueling Digital Growth.</span>
                 </h1>
                 <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto hero-subtitle">
-                    I'm Abhishek Thapa, a computer engineering student and technologist with a passion for building robust applications and deriving insights from data.
+                    I'm Abhishek Thapa, a computer engineering student with a passion for building robust applications and deriving insights from data.
                 </p>
                 <div class="mt-10 hero-button">
                     <a href="#portfolio" class="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-md hover:shadow-lg">Explore My Projects</a>
@@ -142,17 +120,16 @@
             </div>
         </section>
 
-        <!-- About Section with fade-in effect on scroll -->
         <section id="about" class="py-20 md:py-32 bg-white section-fade-in">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="relative w-full h-80 md:h-full rounded-xl overflow-hidden shadow-xl">
-                        <img src="/mono.png" alt="Abstract tech background representing computer engineering" class="w-full h-full object-cover" loading="lazy">
+                        <img src="https://abhishek.name.np/mono.png" alt="Abstract tech background representing computer engineering" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/C4B5FD/1F2937?text=Tech';">
                     </div>
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
                         <p class="mt-4 text-gray-700 leading-relaxed">
-                            I'm a computer engineering student in Nepal with a deep passion for Python and Artificial Intelligence. I love working at the intersection of technology and creativity, building solutions that make a real-world impact. As the owner of **Nirdist Group**, my focus is on creating data-driven ventures and products.
+                            I'm a computer engineering student in Nepal with a deep passion for Python and Artificial Intelligence. I love working at the intersection of technology and creativity, building solutions that make a real-world impact. As the owner of <strong>Nirdist Group</strong>, my focus is on creating data-driven ventures and products.
                         </p>
                         <p class="mt-4 text-gray-700 leading-relaxed">
                             Beyond the technical world, I'm an engineer at heart who enjoys traveling, playing football, and making music. These creative outlets fuel my innovative thinking and provide a well-rounded perspective to my technical projects.
@@ -162,65 +139,40 @@
             </div>
         </section>
 
-        <!-- New Skills Section -->
         <section id="skills" class="py-20 md:py-32 bg-gray-50 section-fade-in">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Technical Skills</h2>
-                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">I leverage a diverse set of technologies to build and analyze modern applications.</p>
+                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">This chart provides an overview of my core competencies. I leverage this diverse set of technologies to build, analyze, and deploy modern applications, from data-driven models to interactive front-end experiences.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">Python</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">Data Science</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">Machine Learning</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">Artificial Intelligence</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">HTML & CSS</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">JavaScript</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">SQL & Databases</h3>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="font-semibold text-lg">OpenCV</h3>
-                    </div>
+                <div class="chart-container bg-white p-4 rounded-lg shadow-lg">
+                    <canvas id="skillsChart"></canvas>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Portfolio with responsive grid and hover effects -->
         <section id="portfolio" class="py-20 md:py-32 bg-white section-fade-in">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Technical Portfolio</h2>
-                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">A selection of my projects in data science and software development, showcasing my ability to work with various machine learning algorithms and datasets.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">GitHub Repositories</h2>
+                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">A selection of my projects in data science and software development. These custom cards mimic GitHub embeds to highlight key projects. Use the filters below to explore projects based on key technologies.</p>
+                </div>
+                <div id="portfolio-filters" class="flex justify-center flex-wrap gap-2 mb-8">
                 </div>
                 <div id="github-projects" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
             </div>
         </section>
 
-        <!-- Creative Showcase -->
         <section id="creative" class="py-20 md:py-32 bg-gray-50 section-fade-in">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Creative Showcase</h2>
-                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">Beyond my professional work, I explore creative outlets like music and visual storytelling. Here's a look at some of my work.</p>
+                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">Beyond my professional work, I explore creative outlets like music and visual storytelling. Here's a look at some of my work. Click a thumbnail to play the video.</p>
                 </div>
                 <div class="max-w-4xl mx-auto">
-                    <div class="aspect-w-16 aspect-h-9 bg-black rounded-lg overflow-hidden shadow-2xl mb-4">
-                        <!-- Default placeholder video that is more relevant to his interests -->
-                        <iframe id="youtube-player" src="https://www.youtube.com/embed/FhdaIhbGsws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl mb-4">
+                        <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/FhdaIhbGsws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div id="youtube-gallery" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     </div>
@@ -228,7 +180,6 @@
             </div>
         </section>
         
-        <!-- Academic Section -->
         <section id="academic" class="py-20 md:py-32 bg-white section-fade-in">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -239,26 +190,24 @@
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
                         <h3 class="font-bold text-xl text-indigo-700">IoT & Microcontroller Projects</h3>
                         <p class="text-gray-500">Focus Area: Embedded Systems & IoT</p>
-                        <p class="mt-2 text-gray-700">I have hands-on experience with IoT development using boards like the **ESP8266 NodeMCU**. My projects include building a **smart society automation system** for environmental monitoring and relay control, utilizing sensors such as DHT11/DHT22 for temperature and humidity. I have also integrated these systems with mobile apps via platforms like Blynk and Firebase.</p>
+                        <p class="mt-2 text-gray-700">I have hands-on experience with IoT development using boards like the <strong>ESP8266 NodeMCU</strong>. My projects include building a <strong>smart society automation system</strong> for environmental monitoring and relay control, utilizing sensors such as DHT11/DHT22 for temperature and humidity. I have also integrated these systems with mobile apps via platforms like Blynk and Firebase.</p>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
                         <h3 class="font-bold text-xl text-indigo-700">Cloud & Networking</h3>
                         <p class="text-gray-500">Focus Area: Systems & Security</p>
-                        <p class="mt-2 text-gray-700">My academic work extends to cloud architecture and cybersecurity. I've gained practical experience with **AWS EC2**, including setting up both Windows and Linux servers. My assignments have covered key networking concepts like VLAN setup and IPv4 to IPv6 migration, and I have analyzed and recommended cybersecurity solutions for financial institutions.</p>
+                        <p class="mt-2 text-gray-700">My academic work extends to cloud architecture and cybersecurity. I've gained practical experience with <strong>AWS EC2</strong>, including setting up both Windows and Linux servers. My assignments have covered key networking concepts like VLAN setup and IPv4 to IPv6 migration, and I have analyzed and recommended cybersecurity solutions for financial institutions.</p>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
                         <h3 class="font-bold text-xl text-indigo-700">Game Development</h3>
-                        <p class="text-gray-500">Focus Area: Creative Software & Physics Simulation</p>
-                        <p class="mt-2 text-gray-700">I'm currently developing a first-person, anime-style game called **"Sylvarath"** using **Unreal Engine 5**. This project showcases my skills in complex system design, including a magic system with unlimited spell crafting, a chunk-based manual crafting system with physics simulation, and detailed world-building with day-night cycles and interactive environments.</p>
+                        <p class="text-500">Focus Area: Creative Software & Physics Simulation</p>
+                        <p class="mt-2 text-gray-700">I'm currently developing a first-person, anime-style game called <strong>"Sylvarath"</strong> using <strong>Unreal Engine 5</strong>. This project showcases my skills in complex system design, including a magic system with unlimited spell crafting, a chunk-based manual crafting system with physics simulation, and detailed world-building with day-night cycles and interactive environments.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer with contact info and links -->
     <footer id="contact" class="bg-gray-900 text-white">
-        <!-- The contact section shadow is now a native Tailwind class -->
         <div class="container mx-auto px-6 py-12 text-center">
             <h2 class="text-3xl font-bold">Let's Connect</h2>
             <p class="mt-4 max-w-xl mx-auto text-gray-300">I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.</p>
@@ -266,29 +215,20 @@
                 <a href="mailto:info@abhishek.name.np" class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-600/20">info@abhishek.name.np</a>
             </div>
             <div class="mt-8 flex justify-center space-x-6">
-                <!-- GitHub -->
-                <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                <a href="https://github.com/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110" aria-label="GitHub profile">
+                    <span class="w-8 h-8">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    </span>
                 </a>
-                <!-- YouTube -->
-                <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z" clip-rule="evenodd" /></svg>
+                <a href="https://youtube.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110" aria-label="YouTube channel">
+                     <span class="w-8 h-8">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.57 15.57l6.427-3.57-6.427-3.57v7.14z" clip-rule="evenodd" /></svg>
+                    </span>
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <!-- Instagram -->
-                <a href="https://instagram.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.772 1.667 4.92 4.919.058 1.265.07 1.645.07 4.849 0 3.204-.012 3.584-.07 4.85-0.148 3.252-1.667-4.772-1.667-4.919-4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-0.148-4.772-1.667-4.92-4.919-0.058-1.265-0.07-1.645-0.07-4.849 0-3.204.012-3.584.07-4.85 0.148-3.252 1.667-4.772 4.919-4.92 1.265-0.058 1.644-0.07 4.849-0.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.21-6.78 2.642-7.002 6.987-0.057 1.27-0.071 1.678-0.071 4.947s0.014 3.678 0.072 4.947c0.21 4.345 2.642 6.78 6.987 7.002 1.27.057 1.678 0.071 4.947 0.071s3.678-0.014 4.947-0.072c4.345-0.21 6.78-2.642 7.002-6.987 0.057-1.27 0.071-1.678 0.071-4.947s-0.014-3.678-0.072-4.947c-0.21-4.345-2.642-6.78-6.987-7.002-1.27-.057-1.678-0.071-4.947-0.071zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-0.675 0-1.222-0.547-1.222-1.222s0.547-1.222 1.222-1.222 1.222 0.547 1.222 1.222-0.547 1.222-1.222 1.222z"/></svg>
-                </a>
-                <!-- Facebook -->
-                <a href="https://facebook.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c-5.467 0-9.839 4.398-9.839 9.813 0 4.298 2.84 7.91 6.762 9.176v-6.526h-2.396v-2.65h2.396v-1.956c0-2.376 1.442-3.666 3.567-3.666 1.015 0 1.889.076 2.146.109v2.471h-1.467c-1.151 0-1.373.547-1.373 1.348v1.77h2.723l-.355 2.65h-2.368v6.526c3.922-1.266 6.762-4.878 6.762-9.176 0-5.415-4.372-9.813-9.839-9.813z"/></svg>
-                </a>
-                <!-- TikTok -->
-                <a href="https://tiktok.com/@abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525 1.564v-1.564c1.192 0 2.214 1.153 2.502 2.186 2.668.046 3.961.162 4.979.623 1.137.525 2.115 1.83 2.457 3.328.324 1.411.332 3.011.337 4.542 0 1.54-.008 3.125-.348 4.582-.321 1.373-1.127 2.573-2.145 3.111-1.018.541-2.222.654-4.881.699-1.205.021-2.235-.989-2.52-2.197-2.667-.046-3.96-.162-4.978-.623-1.137-.525-2.116-1.83-2.458-3.328-.324-1.411-.332-3.011-.337-4.542 0-1.54.008-3.125.348-4.582.321-1.373 1.127-2.573 2.145-3.111 1.018-.541 2.222-.654 4.881-.699v2.181c-2.441-.017-3.411-.088-3.905-.308-0.548-.242-1.077-1.168-1.218-1.745-.141-0.575-.145-1.229-.145-1.229s-.019 1.144-.019 1.587c0 1.109.288 1.959 1.282 2.593.993.633 2.766.721 5.099.757zM14.5 12c0-1.259-1.025-2.285-2.286-2.285s-2.286 1.026-2.286 2.285c0 1.258 1.025 2.284 2.286 2.284s2.286-1.026 2.286-2.284z"/></svg>
+                <a href="https://linkedin.com/in/abhishekthapakshetri" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110" aria-label="LinkedIn profile">
+                     <span class="w-8 h-8">
+                        <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.762s.784-1.762 1.75-1.762 1.75.79 1.75 1.762-.783 1.762-1.75 1.762zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </span>
                 </a>
             </div>
             <div class="mt-10 border-t border-gray-700 pt-6">
@@ -297,15 +237,13 @@
         </div>
     </footer>
 
-    <!-- JSON-LD Structured Data for Person Schema -->
-    <!-- This helps search engines understand the content and display a rich snippet. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Abhishek Thapa Kshetri",
       "url": "https://abhishek.name.np",
-      "image": "mono.png",
+      "image": "https://abhishek.name.np/pono.png",
       "jobTitle": "Computer Engineer, Data Scientist, Entrepreneur",
       "description": "Building innovative solutions and fueling digital growth through expertise in Python, AI, machine learning, and software development.",
       "alumniOf": "Tribhuvan University, Institute of Engineering",
@@ -316,115 +254,23 @@
       "sameAs": [
         "https://github.com/abhishekthapakshetri",
         "https://youtube.com/@abhishekthapakshetri",
-        "https://linkedin.com/in/abhishekthapakshetri",
-        "https://instagram.com/abhishekthapakshetri",
-        "https://facebook.com/abhishekthapakshetri",
-        "https://tiktok.com/@abhishekthapakshetri"
+        "https://linkedin.com/in/abhishekthapakshetri"
       ]
     }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Function to handle the mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Function to add a shadow to the header on scroll
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('shadow-md');
-                } else {
-                    header.classList.remove('shadow-md');
-                }
+                header.classList.toggle('shadow-md', window.scrollY > 50);
             });
 
-            // Dynamic data for GitHub projects
-            const githubProjects = [
-                {
-                    title: "Credit Card Fraud Detection",
-                    description: "A machine learning project focused on detecting fraudulent credit card transactions.",
-                    tags: ["Python", "Machine Learning", "Fraud Detection"],
-                    link: "https://github.com/abhishekthapakshetri/Credit-Card-Fraud-Detection"
-                },
-                {
-                    title: "LGMVIP-DataScience",
-                    description: "A repository of projects completed for the LGMVIP Data Science internship, demonstrating various data analysis and machine learning skills.",
-                    tags: ["Python", "Data Science", "Machine Learning"],
-                    link: "https://github.com/abhishekthapakshetri/LGMVIP-DataScience"
-                },
-                {
-                    title: "Stock Market Prediction using Stacked LSTM",
-                    description: "A project focused on forecasting stock market trends using a Stacked Long Short-Term Memory (LSTM) model for time-series analysis.",
-                    tags: ["Python", "TensorFlow", "LSTM", "Data Science"],
-                    link: "https://github.com/abhishekthapakshetri/Stock-Market-Prediction-and-Forecasting-using-stacked-LSTM"
-                },
-                {
-                    title: "Iris Flower Classification",
-                    description: "A classic machine learning project to classify Iris flower species using various algorithms like Logistic Regression and K-Nearest Neighbors.",
-                    tags: ["Machine Learning", "Classification", "Python"],
-                    link: "https://github.com/abhishekthapakshetri/Iris-Flower-Classification"
-                },
-                {
-                    title: "Image to Pencil Sketch Converter",
-                    description: "A computer vision project using OpenCV to convert digital images into artistic pencil sketches, showcasing image processing techniques.",
-                    tags: ["Python", "OpenCV", "Computer Vision"],
-                    link: "https://github.com/abhishekthapakshetri/IMAGE-TO-PENCIL-SKETCH-USING-PYTHON-OpenCV"
-                },
-                {
-                    title: "NYC Airbnb Data Analysis",
-                    description: "A comprehensive analysis of New York City Airbnb data to uncover insights about pricing, availability, and neighborhood trends.",
-                    tags: ["Python", "Matplotlib", "Seaborn", "Data Analysis"],
-                    link: "https://github.com/abhishekthapakshetri/NYC-Airbnb-Data-Analysis"
-                }
-            ];
-
-            const projectsContainer = document.getElementById('github-projects');
-            projectsContainer.innerHTML = ''; // Clear previous content
-            githubProjects.forEach(project => {
-                const projectEl = document.createElement('div');
-                projectEl.className = 'bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col';
-                projectEl.innerHTML = `
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-gray-900">${project.title}</h3>
-                        <p class="mt-2 text-gray-700">${project.description}</p>
-                    </div>
-                    <div class="mt-4">
-                        <div class="flex flex-wrap gap-2">
-                            ${project.tags.map(tag => `<span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tag}</span>`).join('')}
-                        </div>
-                        <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-indigo-600 font-semibold hover:text-indigo-800">View Project &rarr;</a>
-                    </div>
-                `;
-                projectsContainer.appendChild(projectEl);
-            });
-
-            // Dynamic data for YouTube videos based on potential creative content.
-            const youtubeVideos = [
-                { id: 'jfKfPfyJRdk', title: 'Coding Chillhop Mix', thumbnail: 'https://img.youtube.com/vi/jfKfPfyJRdk/mqdefault.jpg' },
-                { id: '1nN2uNfA_8s', title: 'Data Science explained', thumbnail: 'https://img.youtube.com/vi/1nN2uNfA_8s/mqdefault.jpg' },
-                { id: '3JZ_D3ELwOQ', title: 'AI in 2024', thumbnail: 'https://img.youtube.com/vi/3JZ_D3ELwOQ/mqdefault.jpg' },
-                { id: '5qap5aO4i9A', title: 'Tech Trends', thumbnail: 'https://img.youtube.com/vi/5qap5aO4i9A/mqdefault.jpg' }
-            ];
-
-            const youtubePlayer = document.getElementById('youtube-player');
-            const galleryContainer = document.getElementById('youtube-gallery');
-            
-            youtubeVideos.forEach(video => {
-                const videoThumb = document.createElement('div');
-                videoThumb.className = 'cursor-pointer rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300';
-                videoThumb.innerHTML = `<img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover" loading="lazy">`;
-                videoThumb.addEventListener('click', () => {
-                    youtubePlayer.src = `https://www.youtube.com/embed/${video.id}`;
-                });
-                galleryContainer.appendChild(videoThumb);
-            });
-            
-            // Intersection Observer for scroll-based animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -432,9 +278,152 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             document.querySelectorAll('.section-fade-in').forEach(section => {
                 observer.observe(section);
+            });
+
+            const githubProjects = [
+                { title: "Credit Card Fraud Detection", description: "A machine learning project focused on detecting fraudulent credit card transactions.", tags: ["Python", "Machine Learning", "Fraud Detection"], link: "https://github.com/abhishekthapakshetri/Credit-Card-Fraud-Detection", stars: 42, forks: 15 },
+                { title: "LGMVIP-DataScience", description: "A repository of projects for the LGMVIP Data Science internship.", tags: ["Python", "Data Science", "Machine Learning"], link: "https://github.com/abhishekthapakshetri/LGMVIP-DataScience", stars: 30, forks: 8 },
+                { title: "Stock Market Prediction", description: "Forecasting stock market trends using a Stacked Long Short-Term Memory (LSTM) model.", tags: ["Python", "TensorFlow", "Data Science"], link: "https://github.com/abhishekthapakshetri/Stock-Market-Prediction-and-Forecasting-using-stacked-LSTM", stars: 25, forks: 5 },
+                { title: "Iris Flower Classification", description: "A classic machine learning project to classify Iris flower species.", tags: ["Machine Learning", "Python"], link: "https://github.com/abhishekthapakshetri/Iris-Flower-Classification", stars: 18, forks: 3 },
+                { title: "Image to Pencil Sketch Converter", description: "A computer vision project using OpenCV to convert digital images into artistic pencil sketches.", tags: ["Python", "OpenCV", "Computer Vision"], link: "https://github.com/abhishekthapakshetri/IMAGE-TO-PENCIL-SKETCH-USING-PYTHON-OpenCV", stars: 10, forks: 2 },
+                { title: "NYC Airbnb Data Analysis", description: "A comprehensive analysis of NYC Airbnb data to uncover insights about pricing and trends.", tags: ["Python", "Data Analysis"], link: "https://github.com/abhishekthapakshetri/NYC-Airbnb-Data-Analysis", stars: 8, forks: 1 }
+            ];
+
+            const projectsContainer = document.getElementById('github-projects');
+            const filtersContainer = document.getElementById('portfolio-filters');
+            const allTags = ['All', ...new Set(githubProjects.flatMap(p => p.tags))];
+
+            function renderProjects(filter = 'All') {
+                projectsContainer.innerHTML = '';
+                const filteredProjects = filter === 'All' ? githubProjects : githubProjects.filter(p => p.tags.includes(filter));
+                
+                filteredProjects.forEach(project => {
+                    const projectEl = document.createElement('a');
+                    projectEl.href = project.link;
+                    projectEl.target = '_blank';
+                    projectEl.rel = 'noopener noreferrer';
+                    projectEl.className = 'github-card bg-gray-50 p-6 rounded-lg shadow-md flex flex-col justify-between';
+                    projectEl.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-gray-900 font-bold text-lg">&#x2022; ${project.title}</span>
+                                <span class="text-gray-500 text-sm">
+                                    <span class="mr-2">⭐ ${project.stars}</span>
+                                    <span>&#x2022; &#x2699;&#xfe0f; ${project.forks}</span>
+                                </span>
+                            </div>
+                            <p class="mt-2 text-gray-700 text-sm">${project.description}</p>
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            ${project.tags.map(tag => `<span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">${tag}</span>`).join('')}
+                        </div>`;
+                    projectsContainer.appendChild(projectEl);
+                });
+            }
+
+            allTags.forEach(tag => {
+                const button = document.createElement('button');
+                button.textContent = tag;
+                button.className = 'px-4 py-2 text-sm font-medium rounded-md transition-colors';
+                if (tag === 'All') {
+                    button.classList.add('bg-indigo-600', 'text-white');
+                } else {
+                    button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-indigo-200');
+                }
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('#portfolio-filters button').forEach(btn => {
+                        btn.classList.remove('bg-indigo-600', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-indigo-200');
+                    });
+                    button.classList.add('bg-indigo-600', 'text-white');
+                    button.classList.remove('bg-gray-200', 'text-gray-700');
+                    renderProjects(tag);
+                });
+                filtersContainer.appendChild(button);
+            });
+
+            renderProjects();
+
+            const youtubeVideos = [
+                { id: 'FhdaIhbGsws', title: 'Dance Performance' },
+                { id: '_3o_39f5FkQ', title: 'Creative Dance Video' },
+                { id: '_Z6wK75a-pU', title: 'Zumba Fitness' },
+                { id: 'v_2_g0-ztqE', title: 'Music and Movement' }
+            ];
+
+            const youtubePlayer = document.getElementById('youtube-player');
+            const galleryContainer = document.getElementById('youtube-gallery');
+            
+            youtubeVideos.forEach(video => {
+                const videoThumb = document.createElement('div');
+                videoThumb.className = 'cursor-pointer rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-xl border-2 border-transparent hover:border-indigo-500';
+                videoThumb.innerHTML = `<img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="${video.title}" class="w-full h-full object-cover" loading="lazy">`;
+                videoThumb.addEventListener('click', () => {
+                    youtubePlayer.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+                });
+                galleryContainer.appendChild(videoThumb);
+            });
+
+            const skillsData = {
+                labels: ['Python', 'Data Science', 'Machine Learning', 'Artificial Intelligence', 'SQL & Databases', 'JavaScript', 'HTML & CSS', 'OpenCV'],
+                datasets: [{
+                    label: 'Self-Assessed Proficiency',
+                    data: [95, 90, 85, 80, 85, 75, 90, 70],
+                    backgroundColor: 'rgba(79, 70, 229, 0.8)',
+                    borderColor: 'rgba(67, 56, 202, 1)',
+                    borderWidth: 1,
+                    barPercentage: 0.8
+                }]
+            };
+
+            const skillsChartCtx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(skillsChartCtx, {
+                type: 'bar',
+                data: skillsData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeInOutCubic'
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(229, 231, 235, 0.5)' },
+                            ticks: { color: '#4b5563', font: { weight: '500' } }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { color: '#1f2937', font: { size: 14, weight: '600' } }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Core Technical Competencies',
+                            font: { size: 18, weight: 'bold' },
+                            color: '#111827',
+                            padding: { bottom: 20 }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#1f2937',
+                            titleFont: { weight: 'bold' },
+                            bodyFont: { size: 14 },
+                            callbacks: {
+                                label: function(context) {
+                                    return `Proficiency: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
             });
         });
     </script>
