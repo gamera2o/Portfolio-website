@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Happy Birthday, Naan!</title>
+        <!-- Tailwind CSS for utility classes -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- GSAP for professional animations -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <!-- Google Fonts for the special 'Dancing Script' and 'Playfair Display' fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" href="/cake.png" type="image/png">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet">
+
+        <style>
+        body {
+            background-color: #FFF0F5; /* A soft, elegant pink */
+            font-family: 'Playfair Display', serif;
+            color: #4A235A; /* A deep purple for contrast */
+        }
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        .hero-section {
+            /* Using a placeholder. Remember to replace this with your own image! */
+            background-image: url('/main.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .cake-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+        }
+        #cake-svg {
+            width: 100%;
+            height: auto;
+        }
+        /* Defines the animated cut line for the cake */
+        #cut-line {
+            stroke: #ffffff;
+            stroke-width: 4;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        /* Defines the rose petal animation */
+        .petal {
+            position: absolute;
+            background-color: #FF69B4; /* Hot pink */
+            border-radius: 50% 0; /* Creates the petal shape */
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Custom styling for the surprise section to ensure z-index is correct */
+        #surprise-message {
+            position: relative; /* Needed for z-index to work on child elements */
+        }
+        #surprise-message .surprise-text {
+            position: relative;
+            z-index: 10; /* Ensures the text is on top */
+        }
+        #surprise-message #heart-svg {
+            z-index: 5; /* Puts the heart behind the text */
+        }
+    </style>
+    </head>
+    <body class="overflow-x-hidden">
+
+        <!-- Container for the falling rose petals -->
+        <div id="petal-container"
+            class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden"></div>
+
+        <!-- Hero Section: Full screen with a background image and countdown -->
+        <section
+            class="hero-section h-screen w-screen flex flex-col items-center justify-center text-white relative bg-fixed">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 text-center p-4">
+                <h1
+                    class="font-dancing text-6xl md:text-8xl lg:text-9xl drop-shadow-lg">Happy
+                    Birthday</h1>
+                <h2
+                    class="font-dancing text-5xl md:text-7xl lg:text-8xl text-pink-300 drop-shadow-lg mt-4">Aishwarya
+                    (Naan)</h2>
+                <p class="text-xl md:text-2xl mt-8 tracking-wider">Counting down to your special day! </p>
+
+                <!-- Countdown Timer -->
+                <div id="countdown"
+                    class="mt-12 text-2xl md:text-4xl flex justify-center space-x-4 md:space-x-8 bg-white bg-opacity-20 backdrop-blur-sm p-4 md:p-6 rounded-xl">
+                    <div><span id="days" class="font-bold">00</span><p
+                            class="text-sm">Days</p></div>
+                    <div><span id="hours" class="font-bold">00</span><p
+                            class="text-sm">Hours</p></div>
+                    <div><span id="minutes" class="font-bold">00</span><p
+                            class="text-sm">Minutes</p></div>
+                    <div><span id="seconds" class="font-bold">00</span><p
+                            class="text-sm">Seconds</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Section: A personal note -->
+        <section class="py-20 px-6 bg-rose-50">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2
+                    class="font-dancing text-5xl md:text-6xl text-pink-500 mb-8">A
+                    Few Words For You...</h2>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+                    "Happy Birthday, Naan! On this special day, I just wanted to tell you how incredibly special you are. Every moment with you is a gift. Your smile lights up my world, and your laughter is my favorite song. I hope your day is as beautiful and amazing as you are. Wishing you all the love, happiness, and success in the world. Cheers to you!"
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery Section: Displays cherished photos -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="font-dancing text-5xl md:text-6xl text-center text-pink-500 mb-12">Our
+                    Beautiful Moments And Pictures Of Yours.</h2>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Replace these with your photos. The placeholders have different colors for a varied look. -->
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/1.jpg" alt="Aishwarya's Photo 1"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/2.jpg" alt="Aishwarya's Photo 2"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/3.jpg" alt="Aishwarya's Photo 3"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/4.jpg" alt="Aishwarya's Photo 4"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/5.jpg" alt="Aishwarya's Photo 5"
+                            class="w-full h-64 object-cover">
+                    </div>
+                    <div
+                        class="card bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/6.jpg" alt="Aishwarya's Photo 6"
+                            class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cake Section: Interactive element with a celebration button -->
+        <section class="py-24 px-6 bg-rose-50 text-center" id="cake-section">
+            <h2
+                class="font-dancing text-5xl md:text-6xl text-pink-500 mb-4">Time
+                for a Celebration!</h2>
+            <p class="text-lg text-gray-700 mb-12">Make a wish and cut the
+                cake...</p>
+
+            <div class="cake-container">
+                <svg id="cake-svg" viewBox="0 0 500 500"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <!-- Cake Base -->
+                        <path
+                            d="M100 350 Q250 400 400 350 L400 450 Q250 500 100 450 Z"
+                            fill="#D2691E" />
+                        <path d="M100 350 C100 300 400 300 400 350"
+                            fill="#FFB6C1" />
+                        <!-- Icing -->
+                        <path
+                            d="M100 250 Q250 300 400 250 L400 350 Q250 400 100 350 Z"
+                            fill="#FF69B4" />
+                        <path d="M100 250 C100 200 400 200 400 250"
+                            fill="#FFC0CB" />
+                        <!-- Top Layer -->
+                        <path
+                            d="M150 170 Q250 220 350 170 L350 250 Q250 300 150 250 Z"
+                            fill="#FF1493" />
+                        <path d="M150 170 C150 130 350 130 350 170"
+                            fill="#FFB6C1" />
+                        <!-- Candles -->
+                        <rect x="245" y="80" width="10" height="70"
+                            fill="#F0E68C" />
+                        <path d="M250 80 Q255 70 260 80 Q255 90 250 80"
+                            fill="orange" />
+                    </g>
+                    <!-- The line that will be animated to 'cut' the cake -->
+                    <path id="cut-line" d="M250 150 L250 470" stroke="none" />
+                </svg>
+            </div>
+
+            <button id="cut-cake-btn"
+                class="mt-12 bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Cut the Cake!
+            </button>
+            <p id="wish-message"
+                class="mt-8 text-2xl text-purple-700 font-dancing opacity-0 transition-opacity duration-1000">Happy
+                Birthday! Your wish is on its way!</p>
+        </section>
+
+        <!-- Wish Section: Appears after the cake is cut, allows users to submit wishes -->
+        <section class="py-24 px-6 bg-white hidden" id="wish-section">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2
+                    class="font-dancing text-5xl md:text-6xl text-pink-500 mb-4">Make
+                    a Wish!</h2>
+                <p class="text-lg text-gray-700 mb-8">Write down your wish for
+                    the new year, and it will magically appear below!</p>
+                <textarea id="wish-input" rows="4"
+                    class="w-full p-4 rounded-lg border-2 border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-colors duration-300 resize-none"></textarea>
+                <button id="make-wish-btn"
+                    class="mt-8 bg-purple-500 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-purple-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Send My Wish
+                </button>
+                <div id="wishes-list" class="mt-12 space-y-4 text-left">
+                    <!-- Wishes will be displayed here dynamically from Firestore -->
+                </div>
+
+                <!-- New button to reveal the surprise -->
+                <button id="surprise-btn"
+                    class="mt-16 bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Reveal a Surprise!
+                </button>
+            </div>
+        </section>
+
+        <!-- Surprise Section: Appears after the user clicks the surprise button -->
+        <section class="py-24 px-6 bg-rose-50 text-center hidden"
+            id="surprise-section">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="font-dancing text-5xl md:text-6xl text-pink-500 mb-8">A
+                    Special Message for You!</h2>
+                <div id="surprise-message"
+                    class="bg-pink-100 p-8 md:p-12 rounded-lg shadow-xl relative overflow-hidden transform scale-0 opacity-0 transition-transform duration-500">
+                    <!-- New span to wrap the text and apply a z-index -->
+                    <span class="surprise-text">
+                        <p
+                            class="text-xl md:text-2xl font-bold leading-relaxed text-gray-800">
+                            My dearest Naan,
+                            <br><br>
+                            Wishing you the happiest birthday! 🎉✨
+                            On this special day, I just want to say how
+                            wonderful it feels to know someone like you. You
+                            have such a kind heart and a beautiful smile that
+                            can brighten anyone’s day.
+                            <br><br>
+                            I hope this year brings you endless happiness,
+                            success, and all the little moments that make life
+                            special. You truly deserve the best of everything.
+                            <br><br>
+                            Enjoy your day to the fullest—you’re worth
+                            celebrating in the most special way. 💐
+                            <br><br>
+                            With all my love, always.
+                            <br><br>
+                            Warm wishes,
+                            <br>
+                            Abhishek
+                        </p>
+                    </span>
+                    <!-- Animated heart SVG -->
+                    <svg id="heart-svg"
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0"
+                        viewBox="0 0 100 100"
+                        style="width: 250px; height: 250px;">
+                        <path fill="#e91e63"
+                            d="M50,88.9 C25,75.9 2.5,50 2.5,35.7 C2.5,23.3 12,12.5 25,12.5 C34.5,12.5 42,18.5 50,26.5 C58,18.5 65.5,12.5 75,12.5 C88,12.5 97.5,23.3 97.5,35.7 C97.5,50 75,75.9 50,88.9 Z" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 bg-gray-800 text-center text-white">
+            <p class="font-dancing text-3xl">With All My Love</p>
+            <p class="mt-2">Forever and Always</p>
+        </footer>
+
+        <script type="module">
+        // Firebase SDK Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // --- YOUR Firebase Configuration (from Firebase Console) ---
+        // Replace with your own project config if needed for local development.
+        const firebaseConfig = {
+          apiKey: "AIzaSyC8Gt6oE9mKuxqDxTJ8z9j_gSWgwx1c_00",
+          authDomain: "wish-ce246.firebaseapp.com",
+          projectId: "wish-ce246",
+          storageBucket: "wish-ce246.firebasestorage.app",
+          messagingSenderId: "445189259370",
+          appId: "1:445189259370:web:b38bdcf2b1c4e8d8638a13",
+          measurementId: "G-QNQ2DRP1J8"
+        };
+        
+        // --- Initialize Firebase and Firestore ---
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        /**
+         * Sets up the Firestore real-time listener and event handlers for the wish section.
+         */
+        const setupFirestoreListeners = () => {
+            // The correct, simple path for local development
+            const wishesCol = collection(db, "wishes");
+            
+            const wishesQuery = query(wishesCol);
+
+            onSnapshot(wishesQuery, (snapshot) => {
+                const wishesListDiv = document.getElementById('wishes-list');
+                wishesListDiv.innerHTML = ''; // Clear the list before repopulating
+                
+                // Manually sort the wishes by timestamp in descending order in the client
+                const sortedWishes = snapshot.docs
+                    .map(doc => ({ id: doc.id, ...doc.data() }))
+                    .sort((a, b) => {
+                        const aTime = a.timestamp?.seconds || 0;
+                        const bTime = b.timestamp?.seconds || 0;
+                        return bTime - aTime;
+                    });
+
+                sortedWishes.forEach((wishData) => {
+                    const wishElement = document.createElement('div');
+                    wishElement.className = 'bg-pink-100 p-4 rounded-lg shadow-sm font-playfair-display italic text-gray-800';
+                    wishElement.innerHTML = `<p>"${wishData.wish}"</p>`;
+                    wishesListDiv.appendChild(wishElement);
+                });
+            }, (error) => {
+                console.error("Error fetching wishes: ", error);
+            });
+
+            // Make a Wish Logic with Firebase
+            const makeWishBtn = document.getElementById('make-wish-btn');
+            const wishInput = document.getElementById('wish-input');
+            
+            makeWishBtn.addEventListener('click', async () => {
+                const wishText = wishInput.value.trim();
+                if (wishText === '') {
+                    // Use a message box or a small UI element for alerts, not a native alert()
+                    const messageBox = document.createElement('div');
+                    messageBox.innerText = 'Please write a wish first!';
+                    messageBox.className = 'fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white py-2 px-4 rounded-lg shadow-lg z-50';
+                    document.body.appendChild(messageBox);
+                    setTimeout(() => messageBox.remove(), 2000); // Remove after 2 seconds
+                    return;
+                }
+
+                makeWishBtn.disabled = true;
+                makeWishBtn.innerText = 'Sending...';
+
+                try {
+                    // Use the correct collection path for the addDoc operation
+                    await addDoc(wishesCol, {
+                        wish: wishText,
+                        timestamp: serverTimestamp() 
+                    });
+                    wishInput.value = '';
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                } finally {
+                    makeWishBtn.disabled = false;
+                    makeWishBtn.innerText = 'Send My Wish';
+                }
+            });
+        };
+
+        // Authenticate the user. The Canvas environment provides a token to sign in with.
+        const authenticate = async () => {
+            try {
+                // Localhost only needs anonymous sign-in
+                await signInAnonymously(auth);
+                console.log("Signed in anonymously");
+            } catch (error) {
+                console.error("Error with anonymous authentication:", error);
+            }
+        };
+
+        // Listen for authentication state changes and set up Firestore
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log("User authenticated:", user.uid);
+                setupFirestoreListeners();
+            } else {
+                console.log("User signed out.");
+            }
+        });
+        
+        // Run the authentication flow on page load
+        authenticate();
+        
+        // --- All JavaScript is now at the end of the body for guaranteed DOM readiness ---
+        // Countdown Timer Logic
+        const countdownDate = new Date("2025-08-26T00:00:00").getTime();
+        
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "<div class='w-full text-4xl font-bold'>Happy Birthday!</div>";
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+        }, 1000);
+
+        // Cake Cutting Animation Logic
+        const cutCakeBtn = document.getElementById('cut-cake-btn');
+        const cutLine = document.getElementById('cut-line');
+        const wishMessage = document.getElementById('wish-message');
+        const wishSection = document.getElementById('wish-section');
+        const cakeSection = document.getElementById('cake-section');
+        let isCut = false;
+
+        cutCakeBtn.addEventListener('click', () => {
+            if (isCut) return;
+            isCut = true;
+
+            cutCakeBtn.disabled = true;
+            cutCakeBtn.innerText = 'Celebrating...';
+            cutCakeBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            gsap.to(cutLine, {
+                strokeDashoffset: 0,
+                duration: 1.5,
+                ease: "power2.inOut",
+                onStart: () => {
+                    cutLine.style.stroke = '#fff';
+                },
+                onComplete: () => {
+                    wishMessage.style.opacity = '1';
+                    createPetals();
+                    cakeSection.classList.add('hidden');
+                    wishSection.classList.remove('hidden');
+                    wishSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Surprise Button Logic
+        const surpriseBtn = document.getElementById('surprise-btn');
+        const surpriseSection = document.getElementById('surprise-section');
+        const surpriseMessage = document.getElementById('surprise-message');
+        const heartSvg = document.getElementById('heart-svg');
+
+        surpriseBtn.addEventListener('click', () => {
+            wishSection.classList.add('hidden');
+            surpriseSection.classList.remove('hidden');
+            surpriseSection.scrollIntoView({ behavior: 'smooth' });
+
+            // GSAP timeline for the surprise message and heart
+            const surpriseTimeline = gsap.timeline();
+            surpriseTimeline
+                .to(surpriseMessage, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "back.out(1.7)"
+                })
+                .to(heartSvg, {
+                    opacity: 1,
+                    scale: 1.2,
+                    duration: 1,
+                    ease: "power2.out"
+                }, "-=0.5")
+                .to(heartSvg, {
+                    scale: 1,
+                    duration: 0.5,
+                    ease: "power2.in"
+                });
+        });
+        
+        // Rose Petal Logic
+        const petalContainer = document.getElementById('petal-container');
+        function createPetals() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const petal = document.createElement('div');
+                    petal.classList.add('petal');
+                    
+                    const size = Math.random() * 20 + 10;
+                    petal.style.width = `${size}px`;
+                    petal.style.height = `${size * 1.2}px`;
+                    
+                    petal.style.left = `${Math.random() * 100}vw`;
+                    petal.style.top = `${-size * 2}px`;
+                    
+                    const duration = Math.random() * 5 + 5;
+                    petal.style.animationDuration = `${duration}s`;
+                    petal.style.animationDelay = `${Math.random() * 2}s`;
+                    
+                    petalContainer.appendChild(petal);
+
+                    setTimeout(() => {
+                        petal.remove();
+                    }, (duration + 2) * 1000);
+
+                }, i * 100);
+            }
+        }
+    </script>
+    </body>
+</html>
