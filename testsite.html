@@ -9,13 +9,13 @@
     <meta name="keywords" content="Abhishek Thapa, software developer, mobile app developer, tech entrepreneur, Nirdist Group, Nepal, portfolio, abhishek.name.np">
     <meta property="og:title" content="Abhishek Thapa | Full-Stack Software Developer & Tech Entrepreneur">
     <meta property="og:description" content="Explore the official portfolio of Abhishek Thapa, an IT student, full-stack engineer, and founder of Nirdist Group. Discover innovative projects and technical expertise.">
-    <meta property="og:image" content="https://www.abhishek.name.np/Assets/images/abhishek-thapa-developer.webp">
+    <meta property="og:image" content="https://abhishek.name.np/pono.png">
     <meta property="og:url" content="https://www.abhishek.name.np">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="https://www.abhishek.name.np/Assets/images/abhishek-thapa-developer.webp" type="image/x-icon">
+    <link rel="icon" href="https://abhishek.name.np/pono.png" type="image/x-icon">
     <link rel="canonical" href="https://www.abhishek.name.np">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,7 +129,7 @@
             <canvas id="liquid-effect-canvas"></canvas>
             <div class="container mx-auto px-6 text-center z-10 py-16">
                 <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mx-auto mb-8 shadow-xl ring-4 ring-indigo-500/20 hero-image">
-                    <img src="https://www.abhishek.name.np/Assets/images/abhishek-thapa-developer.webp" alt="Headshot of Abhishek Thapa" class="w-full h-full object-cover" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/192x192/E9D5FF/1F2937?text=AT';">
+                    <img src="https://abhishek.name.np/pono.png" alt="Headshot of Abhishek Thapa" class="w-full h-full object-cover" loading="eager" onerror="this.onerror=null;this.src='https://placehold.co/192x192/E9D5FF/1F2937?text=AT';">
                 </div>
                 <h1 class="text-4xl md:text-7xl font-extrabold text-gray-900 leading-tight hero-title">
                     Abhishek Thapa
@@ -138,7 +138,7 @@
                     Building Solutions, Fueling Digital Growth.
                 </p>
                 <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto hero-subtitle">
-                    I'm a full-stack software developer and entrepreneur with a passion for building robust applications, mobile systems, and data-driven ventures.
+                    I'm a full-stack software developer and entrepreneur with a passion for building robust applications, mobile systems, and data-driven ventures in Nepal.
                 </p>
                 <div class="mt-10 hero-button">
                     <a href="#portfolio" class="bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-md hover:shadow-lg">Explore My Projects</a>
@@ -166,7 +166,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Technical Skills</h2>
-                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">Core technology stack proficiency across development, systems, and hardware domains.</p>
+                    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">This visualization profiles my core stack proficiency across web platforms, native systems architectures, and hardware development environments.</p>
                 </div>
                 <div class="chart-container bg-white p-4 rounded-lg shadow-lg">
                     <canvas id="skillsChart"></canvas>
@@ -263,7 +263,7 @@
       "@type": "Person",
       "name": "Abhishek Thapa",
       "url": "https://www.abhishek.name.np",
-      "image": "https://www.abhishek.name.np/Assets/images/abhishek-thapa-developer.webp",
+      "image": "https://abhishek.name.np/pono.png",
       "jobTitle": "Full-Stack Software Developer & Entrepreneur",
       "knowsAbout": ["Software Development", "Mobile App Development", "IoT", "Game Development", "Systems Architecture"],
       "alumniOf": {
@@ -317,24 +317,15 @@
                 "retina_detect": true
             });
 
-            // Skills Chart Configuration - UPDATED
+            // Skills Chart Configuration
             const ctx = document.getElementById('skillsChart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: [
-                        'JavaScript / TypeScript', 
-                        'React / Next.js', 
-                        'Node.js', 
-                        'Python', 
-                        'Linux Administration', 
-                        'Cloudflare & DNS', 
-                        'Git & GitHub', 
-                        'Arduino / ESP32'
-                    ],
+                    labels: ['PHP / Laravel', 'React / Web', 'Flutter / Kotlin', 'PostgreSQL', 'IoT / Systems'],
                     datasets: [{
                         label: 'Stack Experience Mastery %',
-                        data: [92, 88, 85, 82, 86, 90, 89, 78],
+                        data: [90, 85, 88, 82, 75],
                         backgroundColor: 'rgba(79, 70, 229, 0.2)',
                         borderColor: 'rgba(79, 70, 229, 1)',
                         borderWidth: 2,
