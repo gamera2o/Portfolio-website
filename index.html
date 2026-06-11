@@ -169,11 +169,8 @@
                     </div>
                     <div>
                         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h2>
-                        <p class="mt-4 text-gray-700 leading-relaxed">
-                            I'm a Information Technology student in Nepal with a deep passion for Game Development, technology and Business. I love working at the intersection of technology and creativity, building solutions that make a real-world impact. As the owner of <strong>Nirdist Group</strong>, my focus is on creating data-driven ventures and products.
-                        </p>
-                        <p class="mt-4 text-gray-700 leading-relaxed">
-                            Beyond the technical world, I'm an engineer at heart who enjoys traveling, playing E-Sports, and making Vlogs. These creative outlets fuel my innovative thinking and provide a well-rounded perspective to my technical projects.
+                        <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-3xl mx-auto hero-subtitle">
+                           I am <strong>Abhishek Thapa</strong>, a full-stack software developer, Information Technology student, and tech entrepreneur based in Nepal. As the founder of Nirdist Group, I build robust mobile applications, web systems, and data-driven ventures.
                         </p>
                     </div>
                 </div>
@@ -283,21 +280,30 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Abhishek Thapa",
-      "url": "https://abhishek.name.np",
+      "url": "https://www.abhishek.name.np",
       "image": "https://abhishek.name.np/pono.png",
-      "jobTitle": "Software Developer, Entrepreneur",
-      "description": "Official portfolio of Abhishek Thapa. Showcasing expertise in full-stack engineering, mobile applications, and digital solutions.",
-      "alumniOf": "Tribhuvan University, Institute of Engineering",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Nirdist Group"
+      "jobTitle": "Software Developer & Founder",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Tribhuvan University"
       },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Nirdist Group"
+        },
+        {
+          "@type": "Organization",
+          "name": "Wash Tech Nepal"
+        }
+      ],
+      "description": "Official portfolio of Abhishek Thapa, full-stack software developer and tech entrepreneur in Nepal.",
       "sameAs": [
+        "https://linkedin.com/in/abhishekthapakshetri",
         "https://github.com/abhishekthapakshetri",
-        "https://youtube.com/@abhishekthapakshetri",
-        "https://linkedin.com/in/abhishekthapakshetri"
+        "https://youtube.com/@abhishekthapakshetri"
       ]
-    }
+    }  
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -469,6 +475,7 @@
                 { id: 'Pamgrd8ir6o', title: 'Going to Behada Baba Mela | Dhangadhi | Vlog 9' },
                 { id: 'pEikVnY9l5Q', title: 'First Moto Vlog! Way to Tuition 😜 | Vlog 1 | Fun Ride & Vibes 🔥' }
             ];
+            
 
             const youtubePlayer = document.getElementById('youtube-player');
             const galleryContainer = document.getElementById('youtube-gallery');
